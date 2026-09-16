@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.0.3, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/fetal_hc_qa
+plugins: anyio-4.13.0
+collecting ... collected 42 items
+
+tests/test_comparison_engine.py::test_unmeasurable_when_no_ai_measurement PASSED [  2%]
+tests/test_comparison_engine.py::test_quality_gated_when_confidence_below_threshold PASSED [  4%]
+tests/test_comparison_engine.py::test_normal_path_uses_flagger_tier_and_ga_conversion PASSED [  7%]
+tests/test_comparison_engine.py::test_normal_path_falls_back_to_estimated_ga_when_absent PASSED [  9%]
+tests/test_dataset_loader.py::test_load_case_success PASSED              [ 11%]
+tests/test_dataset_loader.py::test_load_case_missing_metadata_csv_raises PASSED [ 14%]
+tests/test_dataset_loader.py::test_load_case_missing_image_file_raises PASSED [ 16%]
+tests/test_dataset_loader.py::test_load_case_no_metadata_row_raises PASSED [ 19%]
+tests/test_dataset_loader.py::test_load_dataset_skips_bad_case_and_keeps_good_ones PASSED [ 21%]
+tests/test_dataset_loader.py::test_list_case_ids_respects_limit PASSED   [ 23%]
+tests/test_flagging_engine.py::test_compute_pct_diff_basic PASSED        [ 26%]
+tests/test_flagging_engine.py::test_compute_pct_diff_zero_sonographer_raises PASSED [ 28%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[0.0-NO_FLAG] PASSED [ 30%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[1.5-NO_FLAG] PASSED [ 33%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[3.0-NO_FLAG] PASSED [ 35%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[3.0001-REVIEW] PASSED [ 38%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[4.0-REVIEW] PASSED [ 40%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[4.9-REVIEW] PASSED [ 42%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[4.9001-RE_MEASURE] PASSED [ 45%]
+tests/test_flagging_engine.py::test_classify_tier_boundaries[10.0-RE_MEASURE] PASSED [ 47%]
+tests/test_flagging_engine.py::test_custom_limits_are_respected PASSED   [ 50%]
+tests/test_ga_day_converter.py::test_velocity_is_higher_early_than_late PASSED [ 52%]
+tests/test_ga_day_converter.py::test_zero_diff_gives_zero_day_equivalent PASSED [ 54%]
+tests/test_ga_day_converter.py::test_larger_hc_diff_gives_larger_day_equivalent PASSED [ 57%]
+tests/test_ga_day_converter.py::test_estimate_ga_weeks_from_hc_matches_reference_table PASSED [ 59%]
+tests/test_ga_day_converter.py::test_estimate_ga_weeks_from_hc_interpolates PASSED [ 61%]
+tests/test_measurement_extractor.py::test_ramanujan_perimeter_matches_circle_formula PASSED [ 64%]
+tests/test_measurement_extractor.py::test_ramanujan_perimeter_known_ellipse PASSED [ 66%]
+tests/test_measurement_extractor.py::test_ramanujan_perimeter_is_symmetric_in_axes PASSED [ 69%]
+tests/test_measurement_extractor.py::test_ramanujan_perimeter_zero_axis_is_zero PASSED [ 71%]
+tests/test_measurement_extractor.py::test_px_to_mm_scales_linearly PASSED [ 73%]
+tests/test_measurement_extractor.py::test_fit_ellipse_on_synthetic_disc PASSED [ 76%]
+tests/test_measurement_extractor.py::test_fit_ellipse_on_empty_mask_raises PASSED [ 78%]
+tests/test_measurement_extractor.py::test_extract_hc_end_to_end_on_known_ellipse PASSED [ 80%]
+tests/test_measurement_extractor.py::test_extract_hc_returns_none_when_unmeasurable PASSED [ 83%]
+tests/test_pipeline_orchestrator.py::test_run_case_produces_a_report PASSED [ 85%]
+tests/test_pipeline_orchestrator.py::test_run_case_on_missing_case_returns_none PASSED [ 88%]
+tests/test_pipeline_orchestrator.py::test_run_batch_processes_every_case_and_flags_the_noisy_one PASSED [ 90%]
+tests/test_plane_quality_gate.py::test_confidence_is_in_unit_interval PASSED [ 92%]
+tests/test_plane_quality_gate.py::test_confidence_is_zero_for_empty_mask PASSED [ 95%]
+tests/test_plane_quality_gate.py::test_weights_sum_to_one PASSED         [ 97%]
+tests/test_plane_quality_gate.py::test_flat_blank_image_scores_low_focus PASSED [100%]
+
+============================== 42 passed in 1.58s ==============================

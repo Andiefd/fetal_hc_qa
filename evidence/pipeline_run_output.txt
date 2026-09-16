@@ -1,0 +1,14 @@
+2026-09-16 06:09:32,845 INFO     fetal_hc_qa.pipeline: Batch complete: 60/60 cases produced a report.
+
+=== fetal_hc_qa batch run complete ===
+Cases processed:        60
+Mean Dice coefficient:  0.981
+Mean |AI - Sono.| diff: 5.44 mm
+Tier distribution:
+    NO_FLAG         48
+    REVIEW          5
+    RE_MEASURE      7
+    QUALITY_GATED   0
+    UNMEASURABLE    0
+Elapsed:                12.92 s
+Reports written to:     /home/claude/fetal_hc_qa/reports/
